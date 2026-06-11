@@ -57,7 +57,9 @@ python simple-converter.py
 dist/MarkItDown-Converter/MarkItDown-Converter.exe
 ```
 
-### 方式三：使用现有 Conda 环境
+注：打包后文件较大，未上传到 GitHub 仓库。如果需要可联系作者获取。
+
+```### 方式三：使用现有 Conda 环境
 
 如果您已经有 Conda 环境（如 base 环境），可以直接在该环境中安装依赖运行：
 
