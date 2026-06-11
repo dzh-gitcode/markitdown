@@ -1,0 +1,15 @@
+beautifulsoup4
+requests
+markdownify
+charset-normalizer
+defusedxml
+python-pptx
+mammoth
+pandas
+openpyxl
+xlrd
+lxml
+pdfminer.six
+pdfplumber
+olefile
+pyinstaller
