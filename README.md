@@ -19,14 +19,16 @@
 
 ### 方式一：直接运行（推荐）
 
+**💡 重要说明**：仓库中不包含虚拟环境和依赖包，用户克隆后需要自己创建环境并安装依赖。
+
 如果您的系统已安装 Python 环境，可以直接运行脚本：
 
 ```bash
 # 克隆仓库到本地
-git clone <您的仓库地址>
+git clone https://github.com/dzh-gitcode/markitdown
 cd markitdown-0.1.6
 
-# 创建虚拟环境（推荐）
+# 创建虚拟环境（首次运行必须执行）
 python -m venv .venv
 
 # 激活虚拟环境
@@ -35,12 +37,17 @@ python -m venv .venv
 # macOS/Linux
 source .venv/bin/activate
 
-# 安装依赖包
+# 安装依赖包（首次运行必须执行）
 pip install mammoth pdfplumber python-docx python-pptx markdownify
 
 # 启动程序
 python simple-converter.py
 ```
+
+**为什么需要安装依赖？**
+- `.venv` 目录是本地创建的虚拟环境，不会上传到 GitHub
+- 每次克隆新仓库或在新机器上运行，都需要安装依赖包
+- 安装一次后，后续运行只需激活环境并启动程序
 
 ### 方式二：使用打包好的程序
 
@@ -50,13 +57,13 @@ python simple-converter.py
 dist/MarkItDown-Converter/MarkItDown-Converter.exe
 ```
 
-### 方式三：使用 Conda 环境
+### 方式三：使用现有 Conda 环境
 
-如果您使用 Anaconda，可以这样操作：
+如果您已经有 Conda 环境（如 base 环境），可以直接在该环境中安装依赖运行：
 
 ```bash
 # 激活您的 Conda 环境
-conda activate pytorch_env
+conda activate base
 
 # 安装依赖
 pip install mammoth pdfplumber python-docx python-pptx markdownify
@@ -64,6 +71,24 @@ pip install mammoth pdfplumber python-docx python-pptx markdownify
 # 运行程序
 python simple-converter.py
 ```
+
+### 🤔 为什么有多种环境选择？
+
+**推荐选择：方式一（使用 .venv 虚拟环境）**
+
+- 这是 Python 官方推荐的标准虚拟环境方案
+- 轻量级，隔离性好，适合单个项目
+- 不会与系统 Python 或其他项目产生依赖冲突
+
+**使用 Conda 的情况：**
+
+- 如果您已经安装了 Anaconda/Miniconda，并且希望复用现有的环境
+- 如果您的系统中已经有其他项目使用 Conda 管理依赖
+- 注意：使用 Conda 环境时，确保先激活环境再安装依赖
+
+**总结：**
+
+对于这个项目，**推荐使用方式一（.venv 虚拟环境）**，因为它更轻量、更简洁，也更适合作为独立项目管理。
 
 ## 📦 打包成可执行文件
 
